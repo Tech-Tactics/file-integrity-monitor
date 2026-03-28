@@ -1,0 +1,18 @@
+# Build artifacts
+src/*.o
+fim
+
+# Database files
+*.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+
+# macOS
+.DS_Store
+
+# Debug
+*.dSYM/
