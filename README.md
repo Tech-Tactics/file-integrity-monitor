@@ -119,7 +119,3 @@ Building this helped me understand not just how file integrity monitoring works,
 - **The database is not encrypted.** File paths, hashes, and scan metadata are stored in plain text in the SQLite file. For a system protecting sensitive records, the database itself would need encryption at rest to prevent information leakage about what files exist on the system.
 
 These are areas I would want to address if I continued developing this, and they gave me a better appreciation for why enterprise integrity monitoring tools are as complex as they are.
-
-## License
-
-MIT
