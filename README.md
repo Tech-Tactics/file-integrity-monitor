@@ -37,14 +37,13 @@ Every scan is recorded with who ran it, when, and what happened. This supports a
 
 ## Project Structure
 
-```
-src/
-├── main.c          CLI argument parsing and dispatch
-├── scanner.c/.h    Directory traversal and SHA-256 hashing
-├── database.c/.h   SQLite operations (all parameterized queries)
-├── reporter.c/.h   Scan comparison, classification, and output
-└── fim_types.h     Shared structs and enums
-```
+All source files are in the `src/` directory:
+
+- `main.c` handles CLI argument parsing and dispatches to the right module
+- `scanner.c` and `scanner.h` handle directory traversal and SHA-256 hashing
+- `database.c` and `database.h` handle all SQLite operations with parameterized queries
+- `reporter.c` and `reporter.h` handle scan comparison, classification, and terminal output
+- `fim_types.h` defines the shared structs and enums used across all modules
 
 I kept the modules separated so the scanner has zero knowledge of SQLite, and the database layer has zero knowledge of the filesystem. The reporter pulls from both. This also means the core logic could be reused with a different frontend if needed.
 
